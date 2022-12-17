@@ -9,17 +9,17 @@ Feedback on the points of the Terms of Reference:
 *Review: fdgdfggh t frt r*
 
 #### Completed items:
-- [ ] Application accepts username and prints proper message 
+- [x] Application accepts username and prints proper message 
 
-- [ ] Application exits if user pressed `ctrl+c` or sent `.exit` command and proper message is printed 
+- [x] Application exits if user pressed `ctrl+c` or sent `.exit` command and proper message is printed 
 
 - [ ] Attempts to perform an operation on a non-existent file or work on a non-existent path result in the operation fail 
 
-- [ ] Operation fail doesn't crash application 
+- [x] Operation fail doesn't crash application 
 
-- [ ] Go upper from current directory 
+- [x] Go upper from current directory 
 
-- [ ] Go to dedicated folder from current directory 
+- [x] Go to dedicated folder from current directory 
 
 - [ ] List all files and folders in current directory 
 
@@ -55,7 +55,7 @@ Feedback on the points of the Terms of Reference:
 
 - [ ] No synchronous `Node.js` API with asynchronous analogues is used (e.g. not used `readFileSync` instead of `readFile`) 
 
-- [ ] Codebase is written in ESM modules instead of CommonJS 
+- [x] Codebase is written in ESM modules instead of CommonJS 
 
-- [ ] Codebase is separated (at least 7 modules) 
+- [x] Codebase is separated (at least 7 modules) 
 

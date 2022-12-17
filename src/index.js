@@ -1,13 +1,8 @@
-import { homedir } from "os";
 import process, { stdin as input, stdout as output } from "process";
-import * as readline from "readline/promises";
-import {
-  fsEvents,
-  hashEvents,
-  navigationEvents,
-  osEvents,
-  zipEvents,
-} from "./Events/index.js";
+import readline from "readline/promises";
+import { homedir } from "os";
+
+import { commands } from "./commands.js";
 import { getCurrentDir, getNameFromArgs, greeting } from "../helpers.mjs";
 
 const username = getNameFromArgs(process.argv[2]);
@@ -22,7 +17,23 @@ rl.on("line", (input) => {
   if (input === ".exit") {
     rl.close();
   }
-  console.log("input", input);
+  // console.log(input);
+  try {
+    const isValidCommand = commands.map((com) => {
+      const inputWithArgs = input.trim().split(" ");
+      if (com.name.startsWith(inputWithArgs[0])) {
+        return com.event.emit(com.name, inputWithArgs[1]);
+      }
+    });
+    isValidCommand.includes(true)
+      ? isValidCommand
+      : (function () {
+          throw new Error("Operation failed!");
+        })();
+  } catch (error) {
+    console.error(error.message);
+    rl.prompt();
+  }
 })
   .on("SIGINT", () => {
     rl.close();

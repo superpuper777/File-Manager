@@ -1,8 +1,5 @@
 import { EventEmitter } from "events";
-
-const goUpper = () => {};
-const goToFolder = () => {};
-const showListOfFiles = () => {};
+import { goUpper, goToFolder, showListOfFiles } from "../Handlers/navigation.js";
 
 const naviEventEmitter = new EventEmitter();
 naviEventEmitter

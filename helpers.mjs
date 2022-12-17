@@ -28,6 +28,6 @@ export const getNameFromArgs = (args) => {
 export const greeting = (name) => `Welcome to the File Manager, ${name}!\n`;
 
 export const getCurrentDir = (destination) => {
-  process.chdir( destination)
+  process.chdir(destination)
   console.log(`You are currently in ${process.cwd()}`);
 }
