@@ -6,14 +6,17 @@ Feedback on the points of the Terms of Reference:
 
 #### Partially completed items:
 
-*Review: fdgdfggh t frt r*
+- [x] List all files and folders in current directory 
+
+*Review: The output of the program is slightly incorrect. 
+There is a commented code (in handlers/utils.js), I don’t know how to deal with the formation of an object with promises and async/await, it worked well in the console, but I can’t get the values, maybe you can tell me, dear checkers? I would be grateful!*
 
 #### Completed items:
 - [x] Application accepts username and prints proper message 
 
 - [x] Application exits if user pressed `ctrl+c` or sent `.exit` command and proper message is printed 
 
-- [ ] Attempts to perform an operation on a non-existent file or work on a non-existent path result in the operation fail 
+- [x] Attempts to perform an operation on a non-existent file or work on a non-existent path result in the operation fail 
 
 - [x] Operation fail doesn't crash application 
 
@@ -21,19 +24,17 @@ Feedback on the points of the Terms of Reference:
 
 - [x] Go to dedicated folder from current directory 
 
-- [ ] List all files and folders in current directory 
+- [x] Read file and print it's content in console 
 
-- [ ] Read file and print it's content in console 
+- [x] Create empty file 
 
-- [ ] Create empty file 
+- [x] Rename file 
 
-- [ ] Rename file 
+- [x] Copy file 
 
-- [ ] Copy file 
+- [x] Move file 
 
-- [ ] Move file 
-
-- [ ] Delete file 
+- [x] Delete file 
 
 - [ ] Get EOL (default system End-Of-Line) 
 

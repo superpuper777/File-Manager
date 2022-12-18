@@ -1,11 +1,12 @@
 import { EventEmitter } from "events";
-
-const readFile = () => {};
-const createFile = () => {};
-const renameFile = () => {};
-const copyFile = () => {};
-const moveFile = () => {};
-const deleteFile = () => {};
+import {
+  readFile,
+  createFile,
+  renameFile,
+  copyFile,
+  moveFile,
+  deleteFile,
+} from "../handlers/fs.js";
 
 const fsEventEmitter = new EventEmitter();
 fsEventEmitter
@@ -17,5 +18,3 @@ fsEventEmitter
   .on("rm", deleteFile);
 
 export default fsEventEmitter;
-
-

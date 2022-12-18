@@ -3,7 +3,7 @@ import readline from "readline/promises";
 import { homedir } from "os";
 
 import { commands } from "./commands.js";
-import { getCurrentDir, getNameFromArgs, greeting } from "../helpers.mjs";
+import { getCurrentDir, getNameFromArgs, greeting } from "../helpers.js";
 
 const username = getNameFromArgs(process.argv[2]);
 const rl = readline.createInterface({ input, output });
@@ -17,12 +17,12 @@ rl.on("line", (input) => {
   if (input === ".exit") {
     rl.close();
   }
-  // console.log(input);
+  console.log(input);
   try {
     const isValidCommand = commands.map((com) => {
       const inputWithArgs = input.trim().split(" ");
       if (com.name.startsWith(inputWithArgs[0])) {
-        return com.event.emit(com.name, inputWithArgs[1]);
+        return com.event.emit(com.name, inputWithArgs.slice(1));
       }
     });
     isValidCommand.includes(true)

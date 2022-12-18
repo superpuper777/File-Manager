@@ -1,4 +1,8 @@
-import { getCurrentDir } from "../../helpers.mjs";
+import process from "process";
+import { readdir } from "fs/promises";
+
+import {createTableByFile} from './utils.js';
+import { getCurrentDir } from "../../helpers.js";
 
 export const goUpper = async () => {
   try {
@@ -8,7 +12,7 @@ export const goUpper = async () => {
   }
 };
 
-export const goToFolder = async (pathToDirectory) => {
+export const goToFolder = async ([pathToDirectory]) => {
   try {
     getCurrentDir(pathToDirectory);
   } catch (error) {
@@ -16,4 +20,14 @@ export const goToFolder = async (pathToDirectory) => {
   }
 };
 
-export const showListOfFiles = () => {};
+
+export const showListOfFiles = async () => {
+  try {
+    const currentDirectory = process.cwd();
+    const files = await readdir(currentDirectory);
+    const structureTable = createTableByFile(files);
+    console.table(structureTable);
+  } catch (error) {
+    console.error("Operation failed");
+  }
+};

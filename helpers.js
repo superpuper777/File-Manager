@@ -1,5 +1,6 @@
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
+import { stat } from "fs/promises";
 
 export const getFilePath = (meta, ...args) => {
   const __filename = fileURLToPath(meta);
@@ -28,6 +29,17 @@ export const getNameFromArgs = (args) => {
 export const greeting = (name) => `Welcome to the File Manager, ${name}!\n`;
 
 export const getCurrentDir = (destination) => {
-  process.chdir(destination)
+  if(destination !== '') {
+    process.chdir(destination)
+  }
   console.log(`You are currently in ${process.cwd()}`);
 }
+
+export const isFile = async (path) => {
+  try {
+    const stats = await stat(path);
+    return stats.isFile();
+  } catch (err) {
+    console.log(err);
+  }
+};
