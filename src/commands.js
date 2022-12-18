@@ -4,7 +4,7 @@ import {
   navigationEvents,
   osEvents,
   zipEvents,
-} from "./Events/index.js";
+} from "./events/index.js";
 
 const makeCommandObject = (name, event) => {
   return {
