@@ -17,7 +17,6 @@ rl.on("line", (input) => {
   if (input === ".exit") {
     rl.close();
   }
-  console.log(input);
   try {
     const isValidCommand = commands.map((com) => {
       const inputWithArgs = input.trim().split(" ");

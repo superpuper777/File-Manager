@@ -1,9 +1,18 @@
 # File Manager
-### MY rating - 0 points 
+### MY rating - 286.0 points 
 Feedback on the points of the Terms of Reference:
 
 #### Items not completed / not counted:
 
+- [ ] Get EOL (default system End-Of-Line) 
+
+- [ ] Get host machine CPUs info (overall amount of CPUS plus model and clock rate (in GHz) for each of them) 
+
+- [ ] Get home directory 
+
+- [ ] Get current system user name (Do not confuse with the username that is set when the application starts) 
+
+- [ ] Get CPU architecture for which Node.js binary has compiled 
 #### Partially completed items:
 
 - [x] List all files and folders in current directory 
@@ -36,21 +45,11 @@ There is a commented code (in handlers/utils.js), I don’t know how to deal wit
 
 - [x] Delete file 
 
-- [ ] Get EOL (default system End-Of-Line) 
-
-- [ ] Get host machine CPUs info (overall amount of CPUS plus model and clock rate (in GHz) for each of them) 
-
-- [ ] Get home directory 
-
-- [ ] Get current system user name (Do not confuse with the username that is set when the application starts) 
-
-- [ ] Get CPU architecture for which Node.js binary has compiled 
-
 - [x] Calculate hash for file 
 
 - [x] Compress file (using Brotli algorithm) 
 
-- [ ] Decompress file (using Brotli algorithm) 
+- [x] Decompress file (using Brotli algorithm) 
 
 - [x] All operations marked as to be implemented using certain streams should be performed using Streams API 
 

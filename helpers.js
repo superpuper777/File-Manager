@@ -1,5 +1,5 @@
 import { fileURLToPath } from "url";
-import { dirname, join } from "path";
+import { dirname, join, basename } from "path";
 import { stat, access } from "fs/promises";
 
 export const getFilePath = (meta, ...args) => {
@@ -54,8 +54,9 @@ export const isExists = async (path) => {
 };
 
 export const getArchivePath = (pathToFile, pathToDestination) => {
-  const extensionFileRegex = /\.[0-9a-z]+$/i;
   const fileName = basename(pathToFile);
-  const archiveFileName = fileName.replace(extensionFileRegex, ".br");
-  return (pathToDestination = join(pathToDestination, archiveFileName));
+  const zipFileName = `${fileName}.br`;
+  const unzipFileName = fileName.replace(".br", "");
+  const finalFileName = fileName.includes(".br") ? unzipFileName : zipFileName;
+  return (pathToDestination = join(pathToDestination, finalFileName));
 };
