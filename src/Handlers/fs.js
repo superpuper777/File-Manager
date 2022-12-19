@@ -29,12 +29,11 @@ export const renameFile = async ([oldFileName, newFileName]) => {
   const currentDirectory = process.cwd();
   const pathToOldFile = `${currentDirectory}\\${oldFileName}`;
   const pathToNewFile = `${currentDirectory}\\${newFileName}`;
-  console.log(pathToOldFile, pathToNewFile);
   try {
     await rename(pathToOldFile, pathToNewFile);
     getCurrentDir("");
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
   }
 };
 

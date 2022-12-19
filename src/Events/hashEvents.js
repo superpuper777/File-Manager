@@ -1,6 +1,6 @@
 import { EventEmitter } from "events";
 
-const calculateHash = () => {};
+import {calculateHash} from '../handlers/hash.js';
 
 const hashEventEmitter = new EventEmitter();
 hashEventEmitter.on("hash", calculateHash);

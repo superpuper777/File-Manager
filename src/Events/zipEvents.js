@@ -1,7 +1,6 @@
 import { EventEmitter } from "events";
 
-const compressFile = () => {};
-const decompressFile = () => {};
+import {compressFile,decompressFile } from '../handlers/zip.js';
 
 export const zipEventEmitter = new EventEmitter();
 zipEventEmitter.on("compress", compressFile).on("decompress", decompressFile);

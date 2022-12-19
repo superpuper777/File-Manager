@@ -46,15 +46,15 @@ There is a commented code (in handlers/utils.js), I don’t know how to deal wit
 
 - [ ] Get CPU architecture for which Node.js binary has compiled 
 
-- [ ] Calculate hash for file 
+- [x] Calculate hash for file 
 
-- [ ] Compress file (using Brotli algorithm) 
+- [x] Compress file (using Brotli algorithm) 
 
 - [ ] Decompress file (using Brotli algorithm) 
 
-- [ ] All operations marked as to be implemented using certain streams should be performed using Streams API 
+- [x] All operations marked as to be implemented using certain streams should be performed using Streams API 
 
-- [ ] No synchronous `Node.js` API with asynchronous analogues is used (e.g. not used `readFileSync` instead of `readFile`) 
+- [x] No synchronous `Node.js` API with asynchronous analogues is used (e.g. not used `readFileSync` instead of `readFile`) 
 
 - [x] Codebase is written in ESM modules instead of CommonJS 
 

@@ -1,6 +1,6 @@
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
-import { stat } from "fs/promises";
+import { stat, access } from "fs/promises";
 
 export const getFilePath = (meta, ...args) => {
   const __filename = fileURLToPath(meta);
@@ -29,11 +29,11 @@ export const getNameFromArgs = (args) => {
 export const greeting = (name) => `Welcome to the File Manager, ${name}!\n`;
 
 export const getCurrentDir = (destination) => {
-  if(destination !== '') {
-    process.chdir(destination)
+  if (destination !== "") {
+    process.chdir(destination);
   }
   console.log(`You are currently in ${process.cwd()}`);
-}
+};
 
 export const isFile = async (path) => {
   try {
@@ -42,4 +42,20 @@ export const isFile = async (path) => {
   } catch (err) {
     console.log(err);
   }
+};
+
+export const isExists = async (path) => {
+  try {
+    await access(path);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
+export const getArchivePath = (pathToFile, pathToDestination) => {
+  const extensionFileRegex = /\.[0-9a-z]+$/i;
+  const fileName = basename(pathToFile);
+  const archiveFileName = fileName.replace(extensionFileRegex, ".br");
+  return (pathToDestination = join(pathToDestination, archiveFileName));
 };
